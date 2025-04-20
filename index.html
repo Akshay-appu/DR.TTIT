@@ -147,6 +147,81 @@
 
     </div>
   </header>
+  <head>
+    <meta charset="UTF-8">
+    <title>Design-Themed Flash Notification</title>
+    <style>
+      /* Base styles */
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f2f5;
+      }
+  
+      /* Flash container */
+      .flash-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+      }
+  
+      /* Flash notification box */
+      .flash-notification {
+        display: flex;
+        align-items: center;
+        background-color: #ffffff;
+        border-left: 5px solid #df2929; /* Green border for success */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        padding: 16px 20px;
+        border-radius: 8px;
+        min-width: 250px;
+        max-width: 350px;
+        margin-top: 10px;
+        opacity: 0;
+        transform: translateX(20px);
+        transition: all 0.4s ease;
+      }
+  
+      .flash-notification.show {
+        opacity: 1;
+        transform: translateX(0);
+      }
+  
+      .flash-icon {
+        font-size: 20px;
+        margin-right: 12px;
+        color: #df2929;
+      }
+  
+      .flash-message {
+        font-size: 16px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <!-- Flash Notification -->
+  <div class="flash-container">
+    <div id="flashBox" class="flash-notification">
+      <div class="flash-icon">💕</div>
+      <div class="flash-message">Successfully saved changes!</div>
+    </div>
+  </div>
+
+  <script>
+    function showFlashNotification() {
+      const flash = document.getElementById('flashBox');
+      flash.classList.add('show');
+
+      // Hide after 3 seconds
+      setTimeout(() => {
+        flash.classList.remove('show');
+      }, 3000);
+    }
+
+    // Show flash on page load
+    window.onload = showFlashNotification;
+  </script>
 
   <main class="main">
 
@@ -174,8 +249,8 @@
                 <a href="https://chatgpt.com/">
                     <input type="submit" value="Chatgpt"></div></a>
                     <div class="sign-up-form">
-                     <a href="https://www.meta.ai/">
-                        <input type="submit" value="Meta ai"></div></a>
+                     <a href="https://https://api.whatsapp.com/send/?phone=12345678901&text=Hello+I+would+like+to+chat&type=phone_number&app_absent=0">
+                        <input type="submit" value="Whatsapp"></div></a>
                 
 <!--                         <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="sign-up-form"> -->
